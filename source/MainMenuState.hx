@@ -90,7 +90,13 @@ class MainMenuState extends MusicBeatState
 		add(purple);
 		// purple.scrollFactor.set();
 		
-		BFDance = new FlxSprite(25, 300);
+		// unused image of "vs" in main menu
+		// var vs:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('vs'));
+		// vs.scrollFactor.y = 0.05;
+		// vs.antialiasing = true;
+		// add(vs);
+		
+		BFDance = new FlxSprite(25, 175);
 		BFDance.frames = Paths.getSparrowAtlas('BFMenu');
 		BFDance.antialiasing = true;
 		BFDance.animation.addByPrefix('bfdance', 'BF idle dance', 24);
@@ -108,6 +114,7 @@ class MainMenuState extends MusicBeatState
 		WaluigiDance.scrollFactor.y = 0.01;
 		add(WaluigiDance);
 		
+		// unused gf in main menu
 		// GFDance = new FlxSprite(-192.35, -10);
 		// GFDance.frames = Paths.getSparrowAtlas('GFMenu');
 		// GFDance.antialiasing = true;
