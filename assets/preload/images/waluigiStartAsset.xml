@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="waluigiStartAsset.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="WaluigiStartScreen0000" x="0" y="0" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0001" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0002" x="0" y="1534" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0003" x="0" y="1534" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0004" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0005" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0006" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0007" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0008" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0009" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0010" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0011" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0012" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0013" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0014" x="0" y="767" width="1006" height="667"/>
+	<SubTexture name="WaluigiStartScreen0015" x="0" y="767" width="1006" height="667"/>
+</TextureAtlas>
