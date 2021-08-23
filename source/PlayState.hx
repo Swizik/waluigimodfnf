@@ -126,7 +126,7 @@ class PlayState extends MusicBeatState
 
 	private var gfSpeed:Int = 1;
 	public var health:Float = 1; //making public because sethealth doesnt work without it
-	private var combo:Int = 0;
+	public static var combo:Int = 0;
 	public static var misses:Int = 0;
 	private var accuracy:Float = 0.00;
 	private var accuracyDefault:Float = 0.00;
@@ -2225,6 +2225,15 @@ class PlayState extends MusicBeatState
 			DiscordClient.changePresence("GAME OVER -- " + SONG.song + " (" + storyDifficultyText + ") " + Ratings.GenerateLetterRank(accuracy),"\nAcc: " + HelperFunctions.truncateFloat(accuracy, 2) + "% | Score: " + songScore + " | Misses: " + misses  , iconRPC);
 			#end
 
+			if (SONG.song == "Tutorial")
+			{
+				trace(storyDifficulty);
+				if (storyDifficulty == 0 || storyDifficulty == 1)
+				{
+					FlxG.switchState(new WinScreen(true));
+				}
+			}
+
 			// FlxG.switchState(new GameOverState(boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 		}
  		if (FlxG.save.data.resetButton)
@@ -2350,7 +2359,7 @@ class PlayState extends MusicBeatState
 						}
 		
 	
-					if (!daNote.mustPress && daNote.wasGoodHit)
+					if (!daNote.mustPress && daNote.wasGoodHit && daNote.noteType != 2)
 					{
 						if (SONG.song != 'Tutorial')
 							camZooming = true;
@@ -2362,7 +2371,7 @@ class PlayState extends MusicBeatState
 							if (SONG.notes[Math.floor(curStep / 16)].altAnim)
 								altAnim = '-alt';
 						}
-	
+						
 						switch (Math.abs(daNote.noteData))
 						{
 							case 2:
@@ -2548,12 +2557,22 @@ class PlayState extends MusicBeatState
 
 				if (storyPlaylist.length <= 0)
 				{
-					FlxG.sound.playMusic(Paths.music('freakyMenu'));
-
 					transIn = FlxTransitionableState.defaultTransIn;
 					transOut = FlxTransitionableState.defaultTransOut;
 
-					FlxG.switchState(new StoryMenuState());
+					if (SONG.song == "destruction-disco")
+					{
+						FlxG.switchState(new WinScreen(false));
+					}
+					else if (SONG.song == "Tutorial" && accuracy <= 0.40)
+					{
+						FlxG.switchState(new WinScreen(true));
+					}
+					else
+					{
+						FlxG.sound.playMusic(Paths.music('freakyMenu'));
+						FlxG.switchState(new StoryMenuState());
+					}
 
 					#if windows
 					if (luaModchart != null)
