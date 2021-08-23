@@ -3517,7 +3517,7 @@ class PlayState extends MusicBeatState
 	{
 		super.beatHit();
 
-			if (dad.curCharacter == 'waluigi')
+			if (curSong == 'Pinball-Panic')
 		
 	{
 	

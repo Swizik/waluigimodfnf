@@ -9,6 +9,7 @@ end
 function stepHit (step)
 	if curStep == 29 then	
 		setHudPosition(0)
+		setCamZoom(1)
 	end
 	if curStep == 288 then
 		setHudPosition(10000)
