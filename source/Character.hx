@@ -338,7 +338,7 @@ class Character extends FlxSprite
 				addOffset('deathLoop', 37, 5);
 				addOffset('deathConfirm', 37, 69);
 				addOffset('scared', -4);
-				addOffset('bomb', -5);
+				addOffset('bomb', 45, 55);
 
 				playAnim('idle');
 

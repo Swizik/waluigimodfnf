@@ -2681,76 +2681,49 @@ class PlayState extends MusicBeatState
 
 			var daRating = daNote.rating;
 
-			switch(daRating)
-			{
-					case 'shit':
-						if (daNote.noteType == 2)
-							{
-								health -= 0.2;
-								boyfriend.playAnim('bomb', true);
-								FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-							}
-						if (daNote.noteType == 1 || daNote.noteType == 0)
-							{
-								score = -300;
-								combo = 0;
-								misses++;
-								health -= 0.2;
-								ss = false;
-								shits++;
-								if (FlxG.save.data.accuracyMod == 0)
-									totalNotesHit += 0.25;
-							}
-					case 'bad':
-						if (daNote.noteType == 2)
-							{
-								health -= 0.2;
-								boyfriend.playAnim('bomb', true);
-								FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-							}
-						if (daNote.noteType == 1 || daNote.noteType == 0)
-							{
-								daRating = 'bad';
-								score = 0;
-								health -= 0.06;
-								ss = false;
-								bads++;
-								if (FlxG.save.data.accuracyMod == 0)
-									totalNotesHit += 0.50;
-							}
-					case 'good':
-						if (daNote.noteType == 2)
-							{
-								health -= 0.2;
-								boyfriend.playAnim('bomb', true);
-								FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-							}
-						if (daNote.noteType == 1 || daNote.noteType == 0)
-							{
-								daRating = 'good';
-								score = 200;
-								ss = false;
-								goods++;
-								if (health < 2)
-									health += 0.04;
-								if (FlxG.save.data.accuracyMod == 0)
-									totalNotesHit += 0.75;
-							}
-					case 'sick':
-						if (daNote.noteType == 2)
-							{
-								health -= 0.2;
-								boyfriend.playAnim('bomb', true);
-								FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-							}
-						if (daNote.noteType == 1 || daNote.noteType == 0)
-							{
-								if (health < 2)
-									health += 0.1;
-								if (FlxG.save.data.accuracyMod == 0)
-									totalNotesHit += 1;
-								sicks++;	
-							}					
+			if (daNote.noteType != 2) {
+				switch(daRating)
+				{
+						case 'shit':
+							score = -300;
+							combo = 0;
+							misses++;
+							health -= 0.2;
+							ss = false;
+							shits++;
+							if (FlxG.save.data.accuracyMod == 0)
+								totalNotesHit += 0.25;
+
+						case 'bad':
+							daRating = 'bad';
+							score = 0;
+							health -= 0.06;
+							ss = false;
+							bads++;
+							if (FlxG.save.data.accuracyMod == 0)
+								totalNotesHit += 0.50;
+
+						case 'good':
+							daRating = 'good';
+							score = 200;
+							ss = false;
+							goods++;
+							if (health < 2)
+								health += 0.04;
+							if (FlxG.save.data.accuracyMod == 0)
+								totalNotesHit += 0.75;
+							
+						case 'sick':
+							if (health < 2)
+								health += 0.1;
+							if (FlxG.save.data.accuracyMod == 0)
+								totalNotesHit += 1;
+							sicks++;			
+				}
+			} else {
+				health -= 0.2;
+				boyfriend.playAnim('bomb', true);
+				FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
 			}
 
 			// trace('Wife accuracy loss: ' + wife + ' | Rating: ' + daRating + ' | Score: ' + score + ' | Weight: ' + (1 - wife));
@@ -3205,16 +3178,19 @@ class PlayState extends MusicBeatState
 			// FlxG.sound.play(Paths.sound('missnote1'), 1, false);
 			// FlxG.log.add('played imss note');
 
-			switch (direction)
+			if (boyfriend.animation.name != "bomb")
 			{
-				case 0:
-					boyfriend.playAnim('singLEFTmiss', true);
-				case 1:
-					boyfriend.playAnim('singDOWNmiss', true);
-				case 2:
-					boyfriend.playAnim('singUPmiss', true);
-				case 3:
-					boyfriend.playAnim('singRIGHTmiss', true);
+				switch (direction)
+				{
+					case 0:
+						boyfriend.playAnim('singLEFTmiss', true);
+					case 1:
+						boyfriend.playAnim('singDOWNmiss', true);
+					case 2:
+						boyfriend.playAnim('singUPmiss', true);
+					case 3:
+						boyfriend.playAnim('singRIGHTmiss', true);
+				}
 			}
 
 			#if windows
@@ -3356,16 +3332,19 @@ class PlayState extends MusicBeatState
 						totalNotesHit += 1;
 	
 
-					switch (note.noteData)
+					if (boyfriend.animation.name != "bomb")
 					{
-						case 2:
-							boyfriend.playAnim('singUP', true);
-						case 3:
-							boyfriend.playAnim('singRIGHT', true);
-						case 1:
-							boyfriend.playAnim('singDOWN', true);
-						case 0:
-							boyfriend.playAnim('singLEFT', true);
+						switch (note.noteData)
+						{
+							case 2:
+								boyfriend.playAnim('singUP', true);
+							case 3:
+								boyfriend.playAnim('singRIGHT', true);
+							case 1:
+								boyfriend.playAnim('singDOWN', true);
+							case 0:
+								boyfriend.playAnim('singLEFT', true);
+						}
 					}
 		
 					#if windows
