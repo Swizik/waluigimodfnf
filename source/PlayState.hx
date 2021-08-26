@@ -262,8 +262,6 @@ class PlayState extends MusicBeatState
 				storyDifficultyText = "Normal";
 			case 2:
 				storyDifficultyText = "Hard";
-			case 3:
-				storyDifficultyText = "Mania";
 		}
 
 		iconRPC = SONG.player2;
@@ -739,6 +737,55 @@ class PlayState extends MusicBeatState
 						head.active = false;
 						add(head);
 				}
+			case 'pinballBomb':
+				{
+						defaultCamZoom = 0.7;
+						curStage = 'pinballBomb';
+						var bg:FlxSprite = new FlxSprite(-800, -400).loadGraphic(Paths.image('sky'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0.6, 0.6);
+						bg.active = false;
+						add(bg);
+	
+						var beamone:FlxSprite = new FlxSprite(-800, -380).loadGraphic(Paths.image('beam1'));
+						beamone.updateHitbox();
+						beamone.antialiasing = true;
+						beamone.active = false;
+						
+						var beamtwo:FlxSprite = new FlxSprite(-800, -380).loadGraphic(Paths.image('beam2'));
+						beamtwo.updateHitbox();
+						beamtwo.antialiasing = true;
+						beamtwo.active = false;
+						add(beamone);
+						add(beamtwo);
+						
+						var back:FlxSprite = new FlxSprite(-800, -375).loadGraphic(Paths.image('building'));
+						back.updateHitbox();
+						back.antialiasing = true;
+						back.scrollFactor.set(1.05, 1.05);
+						back.active = false;
+						add(back);
+						
+						var front:FlxSprite = new FlxSprite(-800, -380).loadGraphic(Paths.image('ground'));
+						front.updateHitbox();
+						front.antialiasing = true;
+						front.active = false;
+						add(front);
+						
+						var bombs = new FlxSprite(-800, -380);
+						bombs.frames = Paths.getSparrowAtlas('ground_bomb');
+						bombs.animation.addByPrefix('bomb', "boppin", 24, false);
+						bombs.animation.play('bomb');
+						bombs.antialiasing = true;
+						add(bombs);
+						
+						var head:FlxSprite = new FlxSprite(-800, -380).loadGraphic(Paths.image('waluigihead'));
+						head.updateHitbox();
+						head.antialiasing = true;
+						head.scrollFactor.set(1.05, 1.05);
+						head.active = false;
+						add(head);
+				}
 			default:
 			{
 					defaultCamZoom = 0.9;
@@ -784,7 +831,7 @@ class PlayState extends MusicBeatState
 		}
 
 		gf = new Character(400, 130, gfVersion);
-		gf.scrollFactor.set(0.95, 0.95);
+		gf.scrollFactor.set(1, 1);
 
 		dad = new Character(100, 100, SONG.player2);
 
@@ -992,7 +1039,7 @@ class PlayState extends MusicBeatState
 		add(healthBar);
 
 		// Add Kade Engine watermark
-		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 3 ? "Mania" : storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - KE " + MainMenuState.kadeEngineVer : ""), 16);
+		kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " " + (storyDifficulty == 2 ? "Hard" : storyDifficulty == 1 ? "Normal" : "Easy") + (Main.watermarks ? " - KE " + MainMenuState.kadeEngineVer : ""), 16);
 		kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
 		kadeEngineWatermark.scrollFactor.set();
 		add(kadeEngineWatermark);
@@ -2168,6 +2215,9 @@ class PlayState extends MusicBeatState
 					case 'schoolEvil':
 						camFollow.x = boyfriend.getMidpoint().x - 200;
 						camFollow.y = boyfriend.getMidpoint().y - 200;
+					case 'pinballBomb':
+						camFollow.x = boyfriend.getMidpoint().x + 200;
+						camFollow.y = boyfriend.getMidpoint().y + 200;
 				}
 			}
 		}
@@ -2607,9 +2657,6 @@ class PlayState extends MusicBeatState
 
 					if (storyDifficulty == 2)
 						difficulty = '-hard';
-						
-					if (storyDifficulty == 3)
-						difficulty = '-mania';
 
 					trace('LOADING NEXT SONG');
 					// pre lowercasing the next story song name
