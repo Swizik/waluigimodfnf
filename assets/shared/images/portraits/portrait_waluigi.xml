@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="portrait_waluigi.png">
+	<!-- Created with Adobe Animate version 20.0.0.17400 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Codist Kill me0000" x="0" y="0" width="536" height="281" pivotX="157.85" pivotY="111.15"/>
+	<SubTexture name="Waluigi Bomb0000" x="556" y="0" width="710" height="512" pivotX="216" pivotY="256"/>
+	<SubTexture name="Waluigi Bomb0001" x="556" y="0" width="710" height="512"/>
+	<SubTexture name="Waluigi Bomb0002" x="1286" y="0" width="710" height="512"/>
+	<SubTexture name="Waluigi Bomb0003" x="1286" y="0" width="710" height="512"/>
+	<SubTexture name="Waluigi Happy0000" x="2016" y="0" width="610" height="512" pivotX="216" pivotY="256"/>
+	<SubTexture name="Waluigi Happy0001" x="2016" y="0" width="610" height="512"/>
+	<SubTexture name="Waluigi Happy0002" x="2646" y="0" width="610" height="512"/>
+	<SubTexture name="Waluigi Happy0003" x="2646" y="0" width="610" height="512"/>
+	<SubTexture name="Waluigi Mad0000" x="3276" y="0" width="610" height="512" pivotX="216" pivotY="256"/>
+	<SubTexture name="Waluigi Mad0001" x="3276" y="0" width="610" height="512"/>
+	<SubTexture name="Waluigi Mad0002" x="0" y="532" width="610" height="512"/>
+	<SubTexture name="Waluigi Mad0003" x="0" y="532" width="610" height="512"/>
+	<SubTexture name="Waluigi Neutral0000" x="630" y="532" width="522" height="512" pivotX="256" pivotY="256"/>
+	<SubTexture name="Waluigi Neutral0001" x="630" y="532" width="522" height="512"/>
+	<SubTexture name="Waluigi Neutral0002" x="1172" y="532" width="522" height="512"/>
+	<SubTexture name="Waluigi Neutral0003" x="1172" y="532" width="522" height="512"/>
+	<SubTexture name="Waluigi Surprised0000" x="1714" y="532" width="608" height="544" pivotX="214.35" pivotY="284.75"/>
+	<SubTexture name="Waluigi Surprised0001" x="1714" y="532" width="608" height="544"/>
+	<SubTexture name="Waluigi Surprised0002" x="2342" y="532" width="608" height="544"/>
+	<SubTexture name="Waluigi Surprised0003" x="2342" y="532" width="608" height="544"/>
+	<SubTexture name="Waluigi Sweat0000" x="2970" y="532" width="610" height="512" pivotX="216" pivotY="256"/>
+	<SubTexture name="Waluigi Sweat0001" x="2970" y="532" width="610" height="512"/>
+	<SubTexture name="Waluigi Sweat0002" x="0" y="1096" width="610" height="512"/>
+	<SubTexture name="Waluigi Sweat0003" x="0" y="1096" width="610" height="512"/>
+	<SubTexture name="Waluigi Very Mad0000" x="630" y="1096" width="725" height="512" pivotX="224" pivotY="256"/>
+	<SubTexture name="Waluigi Very Mad0001" x="630" y="1096" width="725" height="512"/>
+	<SubTexture name="Waluigi Very Mad0002" x="1375" y="1096" width="725" height="512"/>
+	<SubTexture name="Waluigi Very Mad0003" x="1375" y="1096" width="725" height="512"/>
+</TextureAtlas>
