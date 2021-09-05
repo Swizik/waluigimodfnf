@@ -321,6 +321,10 @@ class PlayState extends MusicBeatState
 		{
 			case 'waluigi-island':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('waluigi-island/islandDialogue'));
+			case 'pinball-panic':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('pinball-panic/pinballDialogue'));
+			case 'destruction-disco':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('destruction-disco/discoDialogue'));
 			case 'senpai':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('senpai/senpaiDialogue'));
 			case 'roses':
@@ -1130,6 +1134,10 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				case 'waluigi-island':
+					schoolIntro(doof);
+				case 'pinball-panic':
+					schoolIntro(doof);
+				case 'destruction-disco':
 					schoolIntro(doof);
 				default:
 					startCountdown();

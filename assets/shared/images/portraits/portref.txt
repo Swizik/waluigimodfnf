@@ -1,0 +1,9 @@
+:wa:Normal
+:wa:Normal Again
+:waBomb:Bomb
+:waHappy:Happy
+:waMad:Mad
+:waSurprised:Surprised
+:waSweat:Sweat
+:waVMad:Very Mad
+:bf:Beep bo bop

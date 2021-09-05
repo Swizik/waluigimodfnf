@@ -52,6 +52,12 @@ class DialogueBox extends FlxSpriteGroup
 			case 'waluigi-island':
 				FlxG.sound.playMusic(Paths.music('Lunchbox', 'week6'), 0);
 				FlxG.sound.music.fadeIn(1, 0, 0.8);
+			case 'pinball-panic':
+				FlxG.sound.playMusic(Paths.music('Lunchbox', 'week6'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
+			case 'destruction-disco':
+				FlxG.sound.playMusic(Paths.music('Lunchbox', 'week6'), 0);
+				FlxG.sound.music.fadeIn(1, 0, 0.8);
 		}
 
 		bgFade = new FlxSprite(-200, -200).makeGraphic(Std.int(FlxG.width * 1.3), Std.int(FlxG.height * 1.3), 0xFFB3DFd8);
@@ -108,6 +114,24 @@ class DialogueBox extends FlxSpriteGroup
 
 				box.y += 320;
 				box.flipX = true;
+			
+			case 'pinball-panic':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByIndices('normal', 'Speech Bubble Normal Open', [11], "", 24);
+
+				box.y += 320;
+				box.flipX = true;
+				
+			case 'destruction-disco':
+				hasDialog = true;
+				box.frames = Paths.getSparrowAtlas('speech_bubble_talking', 'shared');
+				box.animation.addByPrefix('normalOpen', 'Speech Bubble Normal Open', 24, false);
+				box.animation.addByIndices('normal', 'Speech Bubble Normal Open', [11], "", 24);
+
+				box.y += 320;
+				box.flipX = true;
 		}
 
 		this.dialogueList = dialogueList;
@@ -141,6 +165,45 @@ class DialogueBox extends FlxSpriteGroup
 				portraitRight.x += 800;
 				portraitRight.y += 100;
 			
+			case 'pinball-panic':	
+				portraitLeft.frames = Paths.getSparrowAtlas('portraits/portrait_waluigi', 'shared');
+				portraitLeft.animation.addByPrefix('wa', 'Waluigi Neutral', 24, false);
+				portraitLeft.animation.addByPrefix('waBomb', 'Waluigi Bomb', 24, false);
+				portraitLeft.animation.addByPrefix('waHappy', 'Waluigi Happy', 24, false);
+				portraitLeft.animation.addByPrefix('waMad', 'Waluigi Mad', 24, false);
+				portraitLeft.animation.addByPrefix('waSurprised', 'Waluigi Surprised', 24, false);
+				portraitLeft.animation.addByPrefix('waSweat', 'Waluigi Sweat', 24, false);
+				portraitLeft.animation.addByPrefix('waVMad', 'Waluigi Very Mad', 24, false);
+
+				portraitLeft.x += 30;
+				portraitLeft.y -= 20;
+				
+				portraitRight.frames = Paths.getSparrowAtlas('portraits/portrait_bf', 'shared');
+				portraitRight.animation.addByPrefix('enter', 'Portrait BF', 24, false);
+
+				portraitRight.x += 800;
+				portraitRight.y += 100;
+				
+			case 'destruction-disco':	
+				portraitLeft.frames = Paths.getSparrowAtlas('portraits/portrait_waluigi', 'shared');
+				portraitLeft.animation.addByPrefix('wa', 'Waluigi Neutral', 24, false);
+				portraitLeft.animation.addByPrefix('waBomb', 'Waluigi Bomb', 24, false);
+				portraitLeft.animation.addByPrefix('waHappy', 'Waluigi Happy', 24, false);
+				portraitLeft.animation.addByPrefix('waMad', 'Waluigi Mad', 24, false);
+				portraitLeft.animation.addByPrefix('waSurprised', 'Waluigi Surprised', 24, false);
+				portraitLeft.animation.addByPrefix('waSweat', 'Waluigi Sweat', 24, false);
+				portraitLeft.animation.addByPrefix('waVMad', 'Waluigi Very Mad', 24, false);
+
+				portraitLeft.x += 30;
+				portraitLeft.y -= 20;
+				
+				portraitRight.frames = Paths.getSparrowAtlas('portraits/portrait_bf', 'shared');
+				portraitRight.animation.addByPrefix('enter', 'Portrait BF', 24, false);
+
+				portraitRight.x += 800;
+				portraitRight.y += 100;
+			
+			
 			default:
 				portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
 				portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
@@ -168,7 +231,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		box.screenCenter(X);
 		
-		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
+		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('hand_textbox'));
 		add(handSelect);
 
 
