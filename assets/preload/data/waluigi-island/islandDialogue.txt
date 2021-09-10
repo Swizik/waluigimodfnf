@@ -1,11 +1,13 @@
-:wa:Wahaha! Welcome to my pinball land attraction! I take it you're here for a tour?
+:waHappy:Wahaha! Welcome to my pinball land attraction! I take it you're here for a tour?
 :bf:skedoop bah bop.
-:waSurprised:Hold on a second. You both look familar... Mainly your Girlfriend.
+:wa:Hold on a second. You both look familiar... Mainly your Girlfriend.
 :bf:bep?
-:waHappy:AHA. You're the daughter to HIM! You're supposed to be banned from this place along with this dude here!
+:waSurprised:AHA! You're HIS daughter! 
+:waMad:You two are supposed to be banned from here!
 :bf:beep breh bap!
-:wa:Huh. You look pretty determined to get in here. Say...
+:wa:Hmph. You look pretty determined to get in here. Say...
 :wa:I'll let you in on my own terms.
-:waHappy:Beat me in a song battle, and you can come in free of charge. If you lose though, both of you will skidaddle!
-:bf:bap bam!
+:waHappy:Beat me in a song battle, and you can come in free of charge.
+:waMad: If you lose though, both of you will skidaddle!
+:bf:fuck yeah
 :waHappy:Alrighty then Mr. Big Shot, let's a-go!
