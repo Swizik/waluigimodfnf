@@ -297,8 +297,8 @@ class StoryMenuState extends MusicBeatState
 		curDifficulty += change;
 
 		if (curDifficulty < 0)
-			curDifficulty = 3;
-		if (curDifficulty > 3)
+			curDifficulty = 2;
+		if (curDifficulty > 2)
 			curDifficulty = 0;
 
 		sprDifficulty.offset.x = 0;
@@ -314,8 +314,7 @@ class StoryMenuState extends MusicBeatState
 				sprDifficulty.offset.x = 70;
 			case 2:
 				sprDifficulty.animation.play('hard');
-				sprDifficulty.offset.x = -20;
-				sprDifficulty.offset.y = 10;
+				sprDifficulty.offset.x = 20;
 		}
 
 		sprDifficulty.alpha = 0;

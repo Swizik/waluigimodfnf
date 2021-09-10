@@ -4,7 +4,6 @@
 	<!-- http://www.adobe.com/products/animate.html -->
 	<SubTexture name="EASY 0000" x="0" y="0" width="197" height="66"/>
 	<SubTexture name="HARD 0000" x="222" y="0" width="212" height="68"/>
-	<SubTexture name="MANIA 0000" x="0" y="93" width="284" height="73"/>
 	<SubTexture name="NORMAL 0000" x="0" y="191" width="308" height="68"/>
 	<SubTexture name="arrow left 0000" x="333" y="191" width="48" height="86"/>
 	<SubTexture name="arrow push left 0000" x="406" y="191" width="43" height="75"/>
